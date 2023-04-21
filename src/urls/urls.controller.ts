@@ -15,7 +15,7 @@ export class UrlsController {
     const generatedId = await this.usersService.insertUrl(longUrl, userId);
     return {
       status: HttpStatusCode.Created,
-      message: 'User has been created sucessfully',
+      message: 'Url has been created sucessfully',
       data: { shorturl: URL_PREFIX + generatedId },
     };
   }

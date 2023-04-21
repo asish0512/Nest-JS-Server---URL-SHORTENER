@@ -44,6 +44,7 @@ export class UsersController {
   @Get(':id')
   async getUser(@Param('id') userId: string) {
     const user = await this.usersService.getSingleUser(userId);
+    console.log('U', user);
     if (!user) {
       return {
         status: HttpStatusCode.Ok,
@@ -79,6 +80,7 @@ export class UsersController {
   @Delete(':id')
   async removeUser(@Param('id') userId: string) {
     const urls = await this.urlsService.deleteAllUrls(userId);
+    console.log('URLS', urls);
     const result = await this.usersService.deleteUser(userId);
     if (result.deletedCount === 0) {
       return {

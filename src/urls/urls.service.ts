@@ -22,7 +22,6 @@ export class UrlsService {
     // If so return the hash from db
     const url = await this.findUrl(hash, userId);
     if (url) {
-      console.log(url);
       return url.hash as string;
     }
 
