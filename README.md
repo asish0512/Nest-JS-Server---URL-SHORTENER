@@ -58,6 +58,45 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Data Model
+
+```bash
+# User
+$ id: string;
+$ name: string;
+$ email: string;
+$ createdAt: Date;
+$ updatedAt: Date;
+```
+
+```bash
+# Url
+$  longUrl: string;
+$  hash: string;
+$  createdAt: Date;
+$  updatedAt: Date;
+$  userId: string;
+```
+
+## End Points
+```bash
+# User Service
+
+$ POST /users
+$ GET /users
+$ GET /users/{:id}
+$ PATCH /users/{:id}
+$ DELETE /users/{:id}
+```
+```bash
+# Url Service
+$ POST /urls
+$ GET /urls
+$ GET /urls/{:id}
+$ PATCH /urls/{:id}
+$ DELETE /urls/{:id}
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
