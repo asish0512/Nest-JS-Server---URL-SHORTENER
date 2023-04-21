@@ -31,6 +31,11 @@
 ```bash
 $ npm install
 ```
+## Data Connection
+
+```bash
+$ Create a mongoDB free atlas connection and replace the variables in the db.ts in ENV folder. 
+```
 
 ## Running the app
 
@@ -62,6 +67,7 @@ $ npm run test:cov
 
 ```bash
 # User
+
 $ id: string;
 $ name: string;
 $ email: string;
@@ -71,14 +77,19 @@ $ updatedAt: Date;
 
 ```bash
 # Url
+
 $  longUrl: string;
 $  hash: string;
 $  createdAt: Date;
 $  updatedAt: Date;
 $  userId: string;
+
+
+$ We can track other parameters like alias, expiry time etc but limited current usecase to above fields 
 ```
 
 ## End Points
+
 ```bash
 # User Service
 
@@ -88,14 +99,19 @@ $ GET /users/{:id}
 $ PATCH /users/{:id}
 $ DELETE /users/{:id}
 ```
+
 ```bash
 # Url Service
+
 $ POST /urls
 $ GET /urls
 $ GET /urls/{:id}
-$ PATCH /urls/{:id}
-$ DELETE /urls/{:id}
+$ DELETE /urls
+
+$ A patch request doesnt make sense to the Url schema I have choosen
+$ If we track other paramters like alias etc then it would make sense 
 ```
+
 
 ## Support
 

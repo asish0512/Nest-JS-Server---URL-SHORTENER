@@ -121,26 +121,25 @@ describe('UsersController', () => {
     jest.clearAllMocks();
   });
 
-  //   describe('getUser', () => {
-  //     describe('when getUser is called', () => {
-  //       let user;
-  //       const userId = getSingleUserStub()?.data?.id;
-  //       beforeEach(async () => {
-  //         user = await usersController.getUser(userId);
-  //       });
+    describe('getUser', () => {
+      describe('when getUser is called', () => {
+        let user;
+        const userId = getSingleUserStub()?.data?.id;
+        beforeEach(async () => {
+          user = await usersController.getUser(userId);
+        });
 
-  //       test('then it should call usersService', () => {
-  //         expect(usersService.getSingleUser).toBeCalledWith(userId);
-  //       });
+        test('then it should call usersService', () => {
+          expect(usersService.getSingleUser).toBeCalledWith(userId);
+        });
 
-  //       test('then is should return a user', () => {
-  //         const resultData = user?.data || {};
-  //         console.log("RD", resultData);
-  //         console.log("Stub",getSingleUserStub());
-  //         expect(resultData).toEqual(getSingleUserStub());
-  //       });
-  //     });
-  //   });
+        test('then is should return a user', () => {
+          const resultData = user?.data || {};
+          console.log("RD", user);
+          expect(resultData).toEqual(getSingleUserStub());
+        });
+      });
+    });
 
   describe('getUsers', () => {
     describe('when getUsers is called', () => {

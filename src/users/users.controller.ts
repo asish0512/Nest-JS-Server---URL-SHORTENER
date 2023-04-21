@@ -44,7 +44,6 @@ export class UsersController {
   @Get(':id')
   async getUser(@Param('id') userId: string) {
     const user = await this.usersService.getSingleUser(userId);
-    console.log('U', user);
     if (!user) {
       return {
         status: HttpStatusCode.Ok,
